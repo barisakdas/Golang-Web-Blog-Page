@@ -1,0 +1,14 @@
+{{ define "content" }}
+<h1>
+    Makale Düzenle
+    <a href="/admin/" class="btn btn-outline-primary float-right" ><li class="fa fa-arrow-left mr-2"></li>Yazılara Geri Dön</a>
+</h1>
+<hr>
+<form action="/admin/add-category" method="post"enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Kategori Adı</label>
+        <input type="text" name="category-name" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-outline-success w-100 my-3">Kaydet</button>
+</form>
+{{ end }}

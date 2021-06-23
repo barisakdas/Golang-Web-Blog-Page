@@ -1,0 +1,39 @@
+{{ define "content" }}
+<h1>
+    Makale Düzenle
+    <a href="/admin/" class="btn btn-outline-primary float-right" ><li class="fa fa-arrow-left mr-2"></li>Yazılara Geri Dön</a>
+</h1>
+<hr>
+<form action="/admin/add-article" method="post"enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Başlık</label>
+        <input type="text" name="article-title" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="article-description" id="article-description" cols="30" rows="2" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Kategori</label>
+        <select name="article-category" id="article-category" class="form-control">
+            {{range $index,$value := .categories}}
+            <option value="{{$value.ID}}">{{$value.Name}}</option>
+            {{end}}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Görsel</label>
+        <input type="file" name="article-picture" class="form-control-file">
+    </div>
+
+    <div class="form-group">
+        <label>İçerik</label>
+        <textarea name="article-content" id="summernote" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success w-100 my-3">Kaydet</button>
+</form>
+{{ end }}
