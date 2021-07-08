@@ -1,6 +1,6 @@
 {{ define "content" }}
 <h1>
-    Kategoriler
+    Makaleler
     <a href="/admin/add-new-category" class="btn btn-outline-primary float-right" ><li class="fa fa-plus"></li> Yeni Ekle</a>
 </h1>
 <hr>
@@ -18,7 +18,7 @@
     <tr>
         <th scope="row">{{$value.ID}}</th>
         <td>{{$value.Name}}</td>
-        <td>{{$value.CreatedAt}}</td>
+        <td>{{getDate $value.CreatedAt}}</td>
         <td>
             <a href="/admin/edit-category/{{ $value.ID }}" class="btn btn-outline-warning"><li class="fa fa-pen"></li></a>
             <a href="/admin/delete-category/{{ $value.ID }}" class="btn btn-outline-danger"><li class="fa fa-trash"></li></a>

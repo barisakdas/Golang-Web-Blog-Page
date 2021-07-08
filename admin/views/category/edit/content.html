@@ -1,7 +1,7 @@
 {{ define "content" }}
 <h1>
-    Makale Düzenle
-    <a href="/admin/" class="btn btn-outline-primary float-right" ><li class="fa fa-arrow-left mr-2"></li>Yazılara Geri Dön</a>
+    Kategori Düzenle
+    <a href="/admin/categories" class="btn btn-outline-primary float-right" ><li class="fa fa-arrow-left mr-2"></li>Kategorilere Geri Dön</a>
 </h1>
 <hr>
 <form action="/admin/update-category/{{.category.ID}}" method="post"enctype="multipart/form-data">
@@ -11,11 +11,4 @@
     </div>
     <button type="submit" class="btn btn-outline-success w-100 my-3">Kaydet</button>
 </form>
-
-<script>
-    document.getElementById("article-picture").addEventListener("change",function (){
-        document.getElementById("is_selected").setAttribute("value","1")
-        document.getElementById("current_image").style.display = "none"
-    })
-</script>
 {{ end }}
